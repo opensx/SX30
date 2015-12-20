@@ -80,7 +80,7 @@ void setup() {
     sx.init(97);   // scope triggered at channel 97
 
     // RISING slope on INT0 triggers the interrupt routine sxisr (see above)
-    attachInterrupt(0, sxisr, RISING); 
+    attachInterrupt(0, sxisr, CHANGE); 
 } 
 
 /*

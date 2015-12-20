@@ -82,7 +82,7 @@ void setup() {
     track = oldTrack = 0;
 
     // RISING slope on INT0 triggers the interrupt routine sxisr (see above)
-    attachInterrupt(0, sxisr, RISING);
+    attachInterrupt(0, sxisr, CHANGE);
 
     delay(100); // give some time to initalize
 }
