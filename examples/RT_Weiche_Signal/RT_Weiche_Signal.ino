@@ -1,19 +1,19 @@
 /*
  Weichen- und Signal-Dekoder Aufsatz-Dekoder f. Basisplatine
  
- Signal-Typ siehe signal_def.h
+ Signal-Type see signal_def.h
  
- HW         = Basisboard-RJ45-1.1
+ HW         = Basisboard-RJ45-1.1 
+ oder 
+ HW20       = Basisplatine 02.00
  HW aufsatz = RT_Weiche_Signal 0.1
- SW Version:    0.2
+ SW Version:    0.3
  
  *  Created on: 30 Nov 2016
- *  Changed on: see git
- *  Copyright:  Michael Blank
- 
- *  Changed on: 01 Mar 2017   
+ *  Changed on: 06 Mar 2017   
  *  Changes marked with "@Thamm 01.03.2017"
  *  Changes necessary when using the SX30 Lib.
+ *  Copyright:  Michael Blank und Reinhard Thamm
  
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -37,14 +37,17 @@
 #include "hwConfig.h"
 #include "signal_def.h"
 
-#define HW20      // different pins than for HW10 and HW11
+#define HW20      // if HW20 is defined, then "Basisplatine 2.00" is used
+           // if not defined, then Basisplatine 1.1 is used
+           // the pins are different and a different SX Library must be used
 
 #ifdef HW20
-#include <SX30.h>   // this is the Selectrix library  @Thamm 01.03.2017
+#include <SX30.h>   // this is the Selectrix library SX30 for Basisplatine 2.00
+                    //           @Thamm 01.03.2017
 #define PROGBUTTON   (A6)    // for entering programming mode  @Thamm 01.03.2017
 #define KEYPRESS   (analogRead(PROGBUTTON)>512)
 #else
-#include <SX22b.h>   // this is the Selectrix library
+#include <SX22b.h>   // this is the Selectrix library SX22b for Basisplatine 1.1
 #define PROGBUTTON   (3)    // for entering programming mode
 #define KEYPRESS   (!digitalRead(PROGBUTTON))  
 #endif
