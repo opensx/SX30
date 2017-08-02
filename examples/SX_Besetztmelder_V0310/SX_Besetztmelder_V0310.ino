@@ -23,8 +23,7 @@
  * 
  
  * Changes:
- * 28.07.2017:      Programmiermodus erst 30 sec nach Reset möglich, besseres
- *                  Tastenentprellen
+ * 28.07.2017:      Key besser entprellt für Start Programmiermodues
  * 12.04.2015:      Zielhardware als #define hinzu. Damit können die Ports eingestellt
  *                  eingestellt werden, auf denen die Hardware das Belegtsignal 
  *                  zurückliefert.
