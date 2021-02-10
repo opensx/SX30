@@ -6,7 +6,7 @@ Diese neue Version 3.0 der bisherigen Bibliothek SX22b (Version 2.2b) wird für 
 
 SX30 kann auch für die alten SX-Basisboards (V01.00..V01.02) verwendet werden, wenn in der SX30.h das <#define _SXBASISBOARD_ 1> (statt 2) angegeben wird.
 
-SX30 verwendet ein verbessertes Timing und muss bei der Initialisierung in der setup-Routine mit <i>attachInterrupt(1, sxisr, CHANGE)</i> aufgerufen werden.
+SX30 verwendet ein verbessertes Timing und muss bei der Initialisierung in der setup-Routine mit <i>attachInterrupt(0, sxisr, CHANGE)</i> aufgerufen werden.
 
 Lesen Sie mehr (auch über die benötigte Add-On HW für den Arduino), unter:
 <a href="http://opensx.net">opensx.net</a>
